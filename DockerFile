@@ -1,0 +1,17 @@
+# Use the official Python base image
+FROM python:3.9
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the local contents into the container working directory
+COPY . /app
+
+# Install application dependencies using pip
+RUN pip install -r requirements.txt
+
+# Expose the port the application runs on
+EXPOSE 8080
+
+# Command to run the application
+CMD ["python", "app.py"]
